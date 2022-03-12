@@ -23,6 +23,12 @@ class _CounterWidgetState extends State<CounterWidget> {
   }
 
   @override
+  void dispose() {
+    _homeController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Obx(() {
       int _days = _homeController.seconds.value ~/ (24 * 60 * 60);
